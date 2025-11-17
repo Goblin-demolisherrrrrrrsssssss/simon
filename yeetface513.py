@@ -1,7 +1,7 @@
 import hashlib
 
 def userAdder():
-    fileAdder = open("test.txt", "a")
+    fileAdder = open("info.txt", "a")
     newName = str(input("enter your new username: "))
     hashedNewName = hashlib.sha256(newName.encode(encoding="utf-8")).hexdigest()
     newPass = str(input("enter your new password: "))
@@ -16,7 +16,7 @@ name = input("please enter your name here: ")
 hash1 = hashlib.sha256((name.encode(encoding="utf-8"))).hexdigest()
 password = input("please enter your password here: ")
 hash2 = hashlib.sha256(password.encode(encoding="utf-8")).hexdigest()
-file = open("test.txt", "r")
+file = open("info.txt", "r")
 fileContents = file.read()
 file.close()
 splitFileContents = fileContents.splitlines()
