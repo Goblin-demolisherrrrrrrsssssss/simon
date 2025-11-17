@@ -1,4 +1,5 @@
 import tkinter as tk
+import time
 userSequence=[]
 def button_clicked(buttonColour):
     userSequence.append(buttonColour)
@@ -8,7 +9,7 @@ root = tk.Tk()
 # Creating a button with specified options
 rbutton = tk.Button(root, 
                    text="", 
-                   command=button_clicked("R"),
+                   command=lambda:button_clicked("R"),
                    activebackground="white", 
                    activeforeground="black",
                    anchor="n",
@@ -32,7 +33,7 @@ rbutton = tk.Button(root,
 
 gbutton = tk.Button(root, 
                    text="", 
-                   command=button_clicked("G"),
+                   command=lambda:button_clicked("G"),
                    activebackground="white", 
                    activeforeground="black",
                    anchor="e",
@@ -55,7 +56,7 @@ gbutton = tk.Button(root,
 
 bbutton = tk.Button(root, 
                    text="", 
-                   command=button_clicked("B"),
+                   command=lambda:button_clicked("B"),
                    activebackground="white", 
                    activeforeground="black",
                    anchor="s",
@@ -78,7 +79,7 @@ bbutton = tk.Button(root,
 
 ybutton = tk.Button(root, 
                    text="", 
-                   command=button_clicked("Y"),
+                   command=lambda:button_clicked("Y"),
                    activebackground="white", 
                    activeforeground="black",
                    anchor="w",
@@ -99,10 +100,11 @@ ybutton = tk.Button(root,
                    width=15,
                    wraplength=100)
 
-rbutton.grid(row = 0, column = 0,  pady = 2)
-bbutton.grid(row = 1, column = 0,  pady = 2)
-gbutton.grid(row = 0, column = 1,  pady = 2)
-ybutton.grid(row = 1, column = 1,  pady = 2)
+rbutton.grid(row = 0, column = 0,  pady = 10, padx= 10)
+bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
+gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10)
+ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
+
 
 
 #rbutton.place(rely=1.0, relx=1.0,  anchor="se")
@@ -116,3 +118,4 @@ ybutton.grid(row = 1, column = 1,  pady = 2)
 #ybutton.pack(padx=20, pady=20)
 
 root.mainloop()
+#print(userSequence)
