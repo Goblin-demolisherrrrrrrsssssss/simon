@@ -6,7 +6,7 @@ def button_clicked(buttonColour):
 root = tk.Tk()
 
 # Creating a button with specified options
-rbutton = tk.Button(root, 
+redButton = tk.Button(root, 
                    text="", 
                    command=button_clicked("R"),
                    activebackground="white", 
@@ -28,7 +28,7 @@ rbutton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-gbutton = tk.Button(root, 
+greenButton = tk.Button(root, 
                    text="", 
                    command=button_clicked("G"),
                    activebackground="white", 
@@ -50,7 +50,7 @@ gbutton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-bbutton = tk.Button(root, 
+blueButton = tk.Button(root, 
                    text="", 
                    command=button_clicked("B"),
                    activebackground="white", 
@@ -72,7 +72,7 @@ bbutton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-ybutton = tk.Button(root, 
+yellowButton = tk.Button(root, 
                    text="", 
                    command=button_clicked("Y"),
                    activebackground="white", 
@@ -95,9 +95,10 @@ ybutton = tk.Button(root,
                    width=15,
                    wraplength=100)
 
-rbutton.pack(padx=20, pady=20)
-gbutton.pack(padx=20, pady=20)
-bbutton.pack(padx=20, pady=20)
-ybutton.pack(padx=20, pady=20)
+redButton.pack(padx=20, pady=20)
+greenButton.pack(padx=20, pady=20)
+blueButton.pack(padx=20, pady=20)
+yellowButton.pack(padx=20, pady=20)
 
 root.mainloop()
+
