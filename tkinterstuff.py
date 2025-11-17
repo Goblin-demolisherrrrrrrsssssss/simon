@@ -6,12 +6,12 @@ def button_clicked(buttonColour):
 root = tk.Tk()
 
 # Creating a button with specified options
-redButton = tk.Button(root, 
+rbutton = tk.Button(root, 
                    text="", 
                    command=button_clicked("R"),
                    activebackground="white", 
                    activeforeground="black",
-                   anchor="center",
+                   anchor="n",
                    bd=3,
                    bg="red",
                    cursor="hand2",
@@ -28,12 +28,14 @@ redButton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-greenButton = tk.Button(root, 
+
+
+gbutton = tk.Button(root, 
                    text="", 
                    command=button_clicked("G"),
                    activebackground="white", 
                    activeforeground="black",
-                   anchor="center",
+                   anchor="e",
                    bd=3,
                    bg="green",
                    cursor="hand2",
@@ -50,12 +52,13 @@ greenButton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-blueButton = tk.Button(root, 
+
+bbutton = tk.Button(root, 
                    text="", 
                    command=button_clicked("B"),
                    activebackground="white", 
                    activeforeground="black",
-                   anchor="center",
+                   anchor="s",
                    bd=3,
                    bg="blue",
                    cursor="hand2",
@@ -72,12 +75,13 @@ blueButton = tk.Button(root,
                    pady=5,
                    width=15,
                    wraplength=100)
-yellowButton = tk.Button(root, 
+
+ybutton = tk.Button(root, 
                    text="", 
                    command=button_clicked("Y"),
                    activebackground="white", 
                    activeforeground="black",
-                   anchor="center",
+                   anchor="w",
                    bd=3,
                    bg="yellow",
                    cursor="hand2",
@@ -95,10 +99,20 @@ yellowButton = tk.Button(root,
                    width=15,
                    wraplength=100)
 
-redButton.pack(padx=20, pady=20)
-greenButton.pack(padx=20, pady=20)
-blueButton.pack(padx=20, pady=20)
-yellowButton.pack(padx=20, pady=20)
+rbutton.grid(row = 0, column = 0,  pady = 2)
+bbutton.grid(row = 1, column = 0,  pady = 2)
+gbutton.grid(row = 0, column = 1,  pady = 2)
+ybutton.grid(row = 1, column = 1,  pady = 2)
+
+
+#rbutton.place(rely=1.0, relx=1.0,  anchor="se")
+#gbutton.place(rely=1.0, relx=0.0,  anchor="ne")
+#bbutton.place(rely=0.0, relx=1.0,  anchor="sw")
+#ybutton.place(rely=0.0, relx=0.0,  anchor="ne")
+
+#rbutton.pack(padx=20, pady=20)
+#gbutton.pack(padx=20, pady=20)
+#bbutton.pack(padx=20, pady=20)
+#ybutton.pack(padx=20, pady=20)
 
 root.mainloop()
-
