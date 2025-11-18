@@ -1,5 +1,5 @@
 import hashlib
-
+import sys
 def userAdder():
     fileAdder = open("info.txt", "a")
     newName = str(input("enter your new username: "))
