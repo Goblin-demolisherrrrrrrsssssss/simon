@@ -11,12 +11,12 @@ repeat = True # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
 points = 0 # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
 name = "" # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
 while repeat: # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
-    displaycolour = random.choice(colours) # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
-    sequence.append(displaycolour) # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
+    displayColour = random.choice(colours) # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
+    sequence.append(displayColour) # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
     print(*sequence,sep = ",") # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
     for x in range(len(sequence)): # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
-        colourinput = input("Colour input:") # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
-        if colourinput.upper() != sequence: # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
+        colourInput = input("Colour input:") # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
+        if colourInput.upper() != sequence: # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
             print("Oops! Wrong colour!") # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
             break # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
         else: # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
