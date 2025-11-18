@@ -13,16 +13,7 @@ def newRound():
     sequence.append(random.choice(colours))
     print(sequence)
     print("New round!\n")
-    time.sleep(2)
-    for y in range(len(sequence)):
-        if sequence[y] == "RED":
-            flash_button("RED",print(""))
-        elif sequence[y] == "GREEN":
-            flash_button("GREEN",print(""))
-        elif sequence[y] == "BLUE":
-            flash_button("BLUE",print(""))
-        elif sequence[y] == "YELLOW":
-            flash_button("YELLOW",print(""))
+    root.after(500, lambda: play_sequence(0))
 
 def flash_button(colour, callback):
     button_map = {
@@ -50,10 +41,16 @@ def flash_button(colour, callback):
 
     # Step 1: flash bright colour
     btn.config(bg=flash[colour])
-    root.after(300, lambda: (
+    # Step 2: return to normal after 400ms and wait 300ms before callback
+    root.after(400, lambda: (
         btn.config(bg=normal[colour]),
-        root.after(200, callback)
+        root.after(300, callback)
     ))
+
+def play_sequence(index=0):
+    if index < len(sequence):
+        colour = sequence[index]
+        flash_button(colour, lambda: play_sequence(index + 1))
 
 def buttonClick(colour):
     global points
