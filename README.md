@@ -1,7 +1,7 @@
 # simon
 simon game
 very cool ig
-
+Have fun looking at our development process and maybe try not to procrastinate if that helps
 ```mermaid
 graph TD
 A[Suffering];
