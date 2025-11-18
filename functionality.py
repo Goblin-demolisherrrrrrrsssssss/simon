@@ -1,104 +1,127 @@
 import tkinter as tk
 import time
 userSequence=[]
-def button_clicked(buttonColour):
-    userSequence.append(buttonColour)
-
+wrong = False
+import random 
+sequence = []
 root = tk.Tk()
+colours = ["GREEN","BLUE","RED","YELLOW"]
+points = 0
+name = ""
+def newRound():
+    userSequence.clear()
+    sequence.append(random.choice(colours))
+    print(sequence)
 
-# Creating a button with specified options
-rbutton = tk.Button(root, 
-                   text="", 
-                   command=lambda:button_clicked("RED"),
-                   activebackground="white", 
-                   activeforeground="black",
-                   anchor="n",
-                   bd=3,
-                   bg="red",
-                   cursor="hand2",
-                   disabledforeground="black",
-                   fg="black",
-                   font=("Arial", 12),
-                   height=2,
-                   highlightbackground="black",
-                   highlightcolor="green",
-                   highlightthickness=2,
-                   justify="center",
-                   overrelief="raised",
-                   padx=10,
-                   pady=5,
-                   width=15,
-                   wraplength=100)
+def buttonClick(colour):
+    global points
+    userSequence.append(colour)
+    print(f"pressed: {colour}")
+    for x in range(len(userSequence)):
+        if userSequence[x] != sequence[x]:
+            print("Oops! Wrong colour. Game over.")
+            print(f"Game Over! You scored {points} points!")
+            pointAdder = open("points.txt", "a")
+            pointAdder.write(f"{name}: {points}\n")
+            pointAdder.close()
+    if userSequence == sequence:
+        print("Correct!")
+        points += 1
+        root.after(600,newRound)
+
+    # Creating a button with specified options
+rbutton = tk.Button(root,
+                    text="",
+                    command=lambda:buttonClick("RED"),
+                    activebackground="white",
+                    activeforeground="black",
+                    anchor="n",
+                    bd=3,
+                    bg="red",
+                    cursor="hand2",
+                    disabledforeground="black",
+                    fg="black",
+                    font=("Arial", 12),
+                    height=2,
+                    highlightbackground="black",
+                    highlightcolor="green",
+                    highlightthickness=2,
+                    justify="center",
+                    overrelief="raised",
+                    padx=10,
+                    pady=5,
+                    width=15,
+                    wraplength=100)
 
 
-gbutton = tk.Button(root, 
-                   text="", 
-                   command=lambda:button_clicked("GREEN"),
-                   activebackground="white", 
-                   activeforeground="black",
-                   anchor="e",
-                   bd=3,
-                   bg="green",
-                   cursor="hand2",
-                   disabledforeground="black",
-                   fg="black",
-                   font=("Arial", 12),
-                   height=2,
-                   highlightbackground="black",
-                   highlightcolor="green",
-                   highlightthickness=2,
-                   justify="center",
-                   overrelief="raised",
-                   padx=10,
-                   pady=5,
-                   width=15,
-                   wraplength=100)
+gbutton = tk.Button(root,
+                    text="",
+                    command=lambda:buttonClick("GREEN"),
+                    activebackground="white",
+                    activeforeground="black",
+                    anchor="e",
+                    bd=3,
+                    bg="green",
+                    cursor="hand2",
+                    disabledforeground="black",
+                    fg="black",
+                    font=("Arial", 12),
+                    height=2,
+                    highlightbackground="black",
+                    highlightcolor="green",
+                    highlightthickness=2,
+                    justify="center",
+                    overrelief="raised",
+                    padx=10,
+                    pady=5,
+                    width=15,
+                    wraplength=100)
 
-bbutton = tk.Button(root, 
-                   text="", 
-                   command=lambda:button_clicked("BLUE"),
-                   activebackground="white", 
-                   activeforeground="black",
-                   anchor="s",
-                   bd=3,
-                   bg="blue",
-                   cursor="hand2",
-                   disabledforeground="black",
-                   fg="black",
-                   font=("Arial", 12),
-                   height=2,
-                   highlightbackground="black",
-                   highlightcolor="green",
-                   highlightthickness=2,
-                   justify="center",
-                   overrelief="raised",
-                   padx=10,
-                   pady=5,
-                   width=15,
-                   wraplength=100)
+bbutton = tk.Button(root,
+                    text="",
+                    command=lambda:buttonClick("BLUE"),
+                    activebackground="white",
+                    activeforeground="black",
+                    anchor="s",
+                    bd=3,
+                    bg="blue",
+                    cursor="hand2",
+                    disabledforeground="black",
+                    fg="black",
+                    font=("Arial", 12),
+                    height=2,
+                    highlightbackground="black",
+                    highlightcolor="green",
+                    highlightthickness=2,
+                    justify="center",
+                    overrelief="raised",
+                    padx=10,
+                    pady=5,
+                    width=15,
+                    wraplength=100)
 
-ybutton = tk.Button(root, 
-                   text="", 
-                   command=lambda:button_clicked("YELLOW"),
-                   activebackground="white", 
-                   activeforeground="black",
-                   anchor="w",
-                   bd=3,
-                   bg="yellow",
-                   cursor="hand2",
-                   disabledforeground="black",
-                   fg="black",
-                   font=("Arial", 12),
-                   height=2,
-                   highlightbackground="black",
-                   highlightcolor="green",
-                   highlightthickness=2,
-                   justify="center",
-                   overrelief="raised",
-                   padx=10,
-                   pady=5,
-                   width=15,
-                   wraplength=100)
+ybutton = tk.Button(root,
+                    text="",
+                    command=lambda:buttonClick("YELLOW"),
+                    activebackground="white",
+                    activeforeground="black",
+                    anchor="w",
+                    bd=3,
+                    bg="yellow",
+                    cursor="hand2",
+                    disabledforeground="black",
+                    fg="black",
+                    font=("Arial", 12),
+                    height=2,
+                    highlightbackground="black",
+                    highlightcolor="green",
+                    highlightthickness=2,
+                    justify="center",
+                    overrelief="raised",
+                    padx=10,
+                    pady=5,
+                    width=15,
+                    wraplength=100)
 
 rbutton.grid(row = 0, column = 0,  pady = 10, padx= 10)
 bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
@@ -107,53 +130,16 @@ ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
 
 
 
-#rbutton.place(rely=1.0, relx=1.0,  anchor="se")
-#gbutton.place(rely=1.0, relx=0.0,  anchor="ne")
-#bbutton.place(rely=0.0, relx=1.0,  anchor="sw")
-#ybutton.place(rely=0.0, relx=0.0,  anchor="ne")
+    #rbutton.place(rely=1.0, relx=1.0,  anchor="se")
+    #gbutton.place(rely=1.0, relx=0.0,  anchor="ne")
+    #bbutton.place(rely=0.0, relx=1.0,  anchor="sw")
+    #ybutton.place(rely=0.0, relx=0.0,  anchor="ne")
 
-#rbutton.pack(padx=20, pady=20)
-#gbutton.pack(padx=20, pady=20)
-#bbutton.pack(padx=20, pady=20)
-#ybutton.pack(padx=20, pady=20)
-
-import random
-try:
-    test = open("points.txt", "r")
-    test.close()
-except FileNotFoundError:
-    pointFileCreator = open("points.txt", "w")
-    pointFileCreator.close()
-colours = ["GREEN","BLUE","RED","YELLOW"]
-sequence = []
-repeat = True 
-points = 0 
-name = ""
-passes = 0
-while repeat: 
-    displaycolour = random.choice(colours) 
-    sequence.append(displaycolour) 
-    print(*sequence,sep = ",") 
-    for x in range(len(sequence)): 
-        if (userSequence != sequence) and passes < 1: 
-            print("\nOops! Wrong colour!")
-            repeat = False 
-            break 
-        else:
-            points +=1
-            passes+=1
-            print()
-    if repeat != True:
-        break
-print(f"\nGame Over! You scored {points} points!") 
-pointAdder = open("points.txt", "a") 
-pointAdder.write(f"{name}: {points}\n") 
-pointAdder.close() 
+    #rbutton.pack(padx=20, pady=20)
+    #gbutton.pack(padx=20, pady=20)
+    #bbutton.pack(padx=20, pady=20)
+    #ybutton.pack(padx=20, pady=20)
 
 
+newRound()
 root.mainloop()
-
-
-print(userSequence)
-
-
