@@ -12,6 +12,48 @@ def newRound():
     userSequence.clear()
     sequence.append(random.choice(colours))
     print(sequence)
+    print("New round!\n")
+    time.sleep(2)
+    for y in range(len(sequence)):
+        if sequence[y] == "RED":
+            flash_button("RED",print(""))
+        elif sequence[y] == "GREEN":
+            flash_button("GREEN",print(""))
+        elif sequence[y] == "BLUE":
+            flash_button("BLUE",print(""))
+        elif sequence[y] == "YELLOW":
+            flash_button("YELLOW",print(""))
+
+def flash_button(colour, callback):
+    button_map = {
+        "RED": rbutton,
+        "GREEN": gbutton,
+        "BLUE": bbutton,
+        "YELLOW": ybutton
+    }
+
+    normal = {
+        "RED": "red",
+        "GREEN": "green",
+        "BLUE": "blue",
+        "YELLOW": "yellow"
+    }
+
+    flash = {
+        "RED": "orangered",
+        "GREEN": "springgreen2",
+        "BLUE": "deepskyblue",
+        "YELLOW": "orange2"
+    }
+
+    btn = button_map[colour]
+
+    # Step 1: flash bright colour
+    btn.config(bg=flash[colour])
+    root.after(300, lambda: (
+        btn.config(bg=normal[colour]),
+        root.after(200, callback)
+    ))
 
 def buttonClick(colour):
     global points
