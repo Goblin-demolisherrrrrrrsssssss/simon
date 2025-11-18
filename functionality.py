@@ -12,6 +12,34 @@ def newRound():
     userSequence.clear()
     sequence.append(random.choice(colours))
     print(sequence)
+    # for i in range(len(sequence)):
+    #     colour = sequence[i]
+
+    #     if colour == "RED":
+    #         btn = rbutton
+    #         orig = "red"
+    #         new="tomato"
+    #     elif colour == "BLUE":
+    #         btn = bbutton
+    #         orig = "blue"
+    #         new="cyan"
+    #     elif colour == "GREEN":
+    #         btn = gbutton
+    #         orig = "green"
+    #         new="springgreen1"
+    #     else:
+    #         btn = ybutton
+    #         orig = "yellow"
+    #         new="gold1"
+
+    #     btn.config(bg=new)
+    #     root.update()
+    #     root.after(1000)
+
+    #     btn.config(bg=orig)
+    #     root.update()
+    #     root.after(500)
+
 
 def buttonClick(colour):
     global points
