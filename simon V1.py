@@ -2,10 +2,17 @@ import tkinter as tk
 import time
 userSequence=[]
 wrong = False
+import winsound
 import random 
 sequence = []
 root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
+sound_map = {
+    "RED": 440,     # A4
+    "GREEN": 523,   # C5
+    "BLUE": 349,    # F4
+    "YELLOW": 392   # G4
+}
 points = 0
 name = ""
 def newRound():
@@ -36,15 +43,12 @@ def flash_button(colour, callback):
         "BLUE": "deepskyblue",
         "YELLOW": "orange2"
     }
-
     btn = button_map[colour]
-
-    # Step 1: flash bright colour
     btn.config(bg=flash[colour])
-    # Step 2: return to normal after 400ms and wait 300ms before callback
-    root.after(400, lambda: (
+    winsound.Beep(sound_map[colour], 400)
+    root.after(500, lambda: (
         btn.config(bg=normal[colour]),
-        root.after(300, callback)
+        root.after(400, callback)
     ))
 
 def play_sequence(index=0):
@@ -55,6 +59,7 @@ def play_sequence(index=0):
 def buttonClick(colour):
     global points
     userSequence.append(colour)
+    winsound.Beep(sound_map[colour], 400)  # shorter beep for click
     print(f"pressed: {colour}")
     for x in range(len(userSequence)):
         if userSequence[x] != sequence[x]:
@@ -179,6 +184,6 @@ ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
     #bbutton.pack(padx=20, pady=20)
     #ybutton.pack(padx=20, pady=20)
 
-
+time.sleep(2)
 newRound()
 root.mainloop()
