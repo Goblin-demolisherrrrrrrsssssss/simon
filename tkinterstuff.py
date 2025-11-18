@@ -1,121 +1,121 @@
-import tkinter as tk # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-import time # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-userSequence=[] # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-def button_clicked(buttonColour): # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-    userSequence.append(buttonColour) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-root = tk.Tk() # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-# Creating a button with specified options # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-rbutton = tk.Button(root,  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   text="",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   command=lambda:button_clicked("R"), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activebackground="white",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activeforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   anchor="n", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bd=3, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bg="red", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   cursor="hand2", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   disabledforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   fg="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   font=("Arial", 12), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   height=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightbackground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightcolor="green", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightthickness=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   justify="center", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   overrelief="raised", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   padx=10, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   pady=5, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   width=15, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   wraplength=100) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-gbutton = tk.Button(root,  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   text="",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   command=lambda:button_clicked("G"), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activebackground="white",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activeforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   anchor="e", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bd=3, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bg="green", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   cursor="hand2", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   disabledforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   fg="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   font=("Arial", 12), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   height=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightbackground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightcolor="green", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightthickness=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   justify="center", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   overrelief="raised", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   padx=10, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   pady=5, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   width=15, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   wraplength=100) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-bbutton = tk.Button(root,  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   text="",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   command=lambda:button_clicked("B"), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activebackground="white",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activeforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   anchor="s", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bd=3, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bg="blue", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   cursor="hand2", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   disabledforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   fg="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   font=("Arial", 12), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   height=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightbackground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightcolor="green", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightthickness=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   justify="center", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   overrelief="raised", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   padx=10, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   pady=5, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   width=15, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   wraplength=100) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-ybutton = tk.Button(root,  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   text="",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   command=lambda:button_clicked("Y"), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activebackground="white",  # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   activeforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   anchor="w", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bd=3, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   bg="yellow", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   cursor="hand2", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   disabledforeground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   fg="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   font=("Arial", 12), # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   height=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightbackground="black", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightcolor="green", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   highlightthickness=2, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   justify="center", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   overrelief="raised", # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   padx=10, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   pady=5, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   width=15, # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-                   wraplength=100) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-rbutton.grid(row = 0, column = 0,  pady = 10, padx= 10) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#rbutton.place(rely=1.0, relx=1.0,  anchor="se") # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#gbutton.place(rely=1.0, relx=0.0,  anchor="ne") # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#bbutton.place(rely=0.0, relx=1.0,  anchor="sw") # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#ybutton.place(rely=0.0, relx=0.0,  anchor="ne") # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#rbutton.pack(padx=20, pady=20) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#gbutton.pack(padx=20, pady=20) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#bbutton.pack(padx=20, pady=20) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#ybutton.pack(padx=20, pady=20) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
- # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-root.mainloop() # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
-#print(userSequence) # imagine if do not redeem got a lowwww tapppeerrrr fadeeeee (meme is no longer massive)
+import tkinter as tk
+import time
+userSequence=[]
+def button_clicked(buttonColour):
+    userSequence.append(buttonColour)
+
+root = tk.Tk()
+
+# Creating a button with specified options
+rbutton = tk.Button(root, 
+                   text="", 
+                   command=lambda:button_clicked("RED"),
+                   activebackground="white", 
+                   activeforeground="black",
+                   anchor="n",
+                   bd=3,
+                   bg="red",
+                   cursor="hand2",
+                   disabledforeground="black",
+                   fg="black",
+                   font=("Arial", 12),
+                   height=2,
+                   highlightbackground="black",
+                   highlightcolor="green",
+                   highlightthickness=2,
+                   justify="center",
+                   overrelief="raised",
+                   padx=10,
+                   pady=5,
+                   width=15,
+                   wraplength=100)
+
+
+gbutton = tk.Button(root, 
+                   text="", 
+                   command=lambda:button_clicked("GREEN"),
+                   activebackground="white", 
+                   activeforeground="black",
+                   anchor="e",
+                   bd=3,
+                   bg="green",
+                   cursor="hand2",
+                   disabledforeground="black",
+                   fg="black",
+                   font=("Arial", 12),
+                   height=2,
+                   highlightbackground="black",
+                   highlightcolor="green",
+                   highlightthickness=2,
+                   justify="center",
+                   overrelief="raised",
+                   padx=10,
+                   pady=5,
+                   width=15,
+                   wraplength=100)
+
+bbutton = tk.Button(root, 
+                   text="", 
+                   command=lambda:button_clicked("BLUE"),
+                   activebackground="white", 
+                   activeforeground="black",
+                   anchor="s",
+                   bd=3,
+                   bg="blue",
+                   cursor="hand2",
+                   disabledforeground="black",
+                   fg="black",
+                   font=("Arial", 12),
+                   height=2,
+                   highlightbackground="black",
+                   highlightcolor="green",
+                   highlightthickness=2,
+                   justify="center",
+                   overrelief="raised",
+                   padx=10,
+                   pady=5,
+                   width=15,
+                   wraplength=100)
+
+ybutton = tk.Button(root, 
+                   text="", 
+                   command=lambda:button_clicked("YELLOW"),
+                   activebackground="white", 
+                   activeforeground="black",
+                   anchor="w",
+                   bd=3,
+                   bg="yellow",
+                   cursor="hand2",
+                   disabledforeground="black",
+                   fg="black",
+                   font=("Arial", 12),
+                   height=2,
+                   highlightbackground="black",
+                   highlightcolor="green",
+                   highlightthickness=2,
+                   justify="center",
+                   overrelief="raised",
+                   padx=10,
+                   pady=5,
+                   width=15,
+                   wraplength=100)
+
+rbutton.grid(row = 0, column = 0,  pady = 10, padx= 10)
+bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
+gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10)
+ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
+
+
+
+#rbutton.place(rely=1.0, relx=1.0,  anchor="se")
+#gbutton.place(rely=1.0, relx=0.0,  anchor="ne")
+#bbutton.place(rely=0.0, relx=1.0,  anchor="sw")
+#ybutton.place(rely=0.0, relx=0.0,  anchor="ne")
+
+#rbutton.pack(padx=20, pady=20)
+#gbutton.pack(padx=20, pady=20)
+#bbutton.pack(padx=20, pady=20)
+#ybutton.pack(padx=20, pady=20)
+
+root.mainloop()
+print(userSequence)
