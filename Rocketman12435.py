@@ -1,12 +1,12 @@
-import random
-try:
-    test = open("points.txt", "r")
-    test.close()
-except FileNotFoundError:
-    pointFileCreator = open("points.txt", "w")
-    pointFileCreator.close()
-colours = ["GREEN","BLUE","RED","YELLOW"]
-sequence = []
+import random # absolute shawarma I fixed your code
+try: # absolute shawarma I fixed your code
+    test = open("points.txt", "r") # absolute shawarma I fixed your code
+    test.close() # absolute shawarma I fixed your code
+except FileNotFoundError: # absolute shawarma I fixed your code
+    pointFileCreator = open("points.txt", "w") # absolute shawarma I fixed your code
+    pointFileCreator.close() # absolute shawarma I fixed your code
+colours = ["GREEN","BLUE","RED","YELLOW"] # absolute shawarma I fixed your code
+sequence = [] # absolute shawarma I fixed your code
 repeat = True # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
 points = 0 # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
 name = "" # imagine if ninja got a LOWWWWW taperrrr fadeeeeee
