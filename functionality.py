@@ -18,10 +18,9 @@ sound_map = {
 def newRound():
     userSequence.clear()
     sequence.append(random.choice(colours))
-    print(sequence)
+    #print(sequence)
     for i in range(len(sequence)):
         colour = sequence[i]
-
         if colour == "RED":
             btn = rbutton
             orig = "red"
@@ -52,7 +51,7 @@ def newRound():
 def buttonClick(colour):
     global points
     userSequence.append(colour)
-    print(f"pressed: {colour}")
+    print(f"Pressed: {colour}\n")
     for x in range(len(userSequence)):
         if userSequence[x] != sequence[x]:
             print("Oops! Wrong colour. Game over.")
@@ -61,7 +60,7 @@ def buttonClick(colour):
             pointAdder.write(f"{name}: {points}\n")
             pointAdder.close()
     if userSequence == sequence:
-        print("Correct!")
+        print("Correct!\n")
         points += 1
         root.after(600,newRound)
 
