@@ -1,5 +1,6 @@
 import tkinter as tk
 import time
+import winsound
 userSequence=[]
 wrong = False
 import random 
@@ -8,6 +9,12 @@ root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
 points = 0
 name = ""
+sound_map = {
+    "RED": 440,     # A4
+    "GREEN": 523,   # C5
+    "BLUE": 349,    # F4
+    "YELLOW": 392   # G4
+}
 def newRound():
     userSequence.clear()
     sequence.append(random.choice(colours))
@@ -38,6 +45,7 @@ def newRound():
 
         btn.config(bg=orig)
         root.update()
+        winsound.Beep(sound_map[colour], 400)
         root.after(300)
 
 
