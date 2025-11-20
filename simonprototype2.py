@@ -48,6 +48,13 @@ def newRound():
         winsound.Beep(sound_map[colour], 400)
         root.after(300)
 
+def welcome():
+    print("Welcome to the Simon game")
+    time.sleep(1)
+    print("In this game, buttons will flash in a sequence and each button that flashes will make a corresponding sound,\n with the same sound being played each time for a specific button")
+    time.sleep(1)
+    print("Your job is to press the buttons in the right sequence after they have flashed. Have fun!")
+    time.sleep(5)
 
 def buttonClick(colour):
     global points
@@ -186,6 +193,6 @@ label.grid(row= 1, column=2, pady = 10, padx= 10)
     #bbutton.pack(padx=20, pady=20)
     #ybutton.pack(padx=20, pady=20)
 
-
+welcome()
 newRound()
 root.mainloop()
