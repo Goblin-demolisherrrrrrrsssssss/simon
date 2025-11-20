@@ -1,6 +1,8 @@
 import tkinter as tk
 import winsound
-import random 
+import random
+import re
+import time
 
 try:
     testFileOpen = open("points.txt", "r")
@@ -13,7 +15,7 @@ sequence = []
 root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
 points = 0
-name = ""
+name = input("please enter your name here: ")
 sound_map = {
     "RED": 440,     # A4
     "GREEN": 523,   # C5
@@ -65,8 +67,19 @@ def buttonClick(colour):
             ybutton.config(bg="black", state=tk.DISABLED)
             print("Oops! Wrong colour. Game over.")
             print(f"Game Over! You scored {points} points!")
-            pointAdder = open("points.txt", "a")
-            pointAdder.write(f"{name}: {points}\n")
+            pointFileData = open("points.txt", "r")
+            fileData = pointFileData.read()
+            if name in fileData:
+                old_score = int(re.search(fr"{name}: (\d+)", fileData).group(1))
+                if points <= old_score: # doesn't replace the score if new one is lower
+                    pass
+                else:
+                    fileData = re.sub(fr"{name}: \d", f"{name}: {points}", fileData)
+            else:
+                fileData += f"{name}: {points}\n"
+            pointFileData.close()
+            pointAdder = open("points.txt", "w")
+            pointAdder.write(fileData)
             pointAdder.close()
     if userSequence == sequence:
         print("Correct!\n")
