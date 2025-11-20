@@ -61,6 +61,10 @@ def buttonClick(colour):
     print(f"Pressed: {colour}\n")
     for x in range(len(userSequence)):
         if userSequence[x] != sequence[x]:
+            rbutton.config(bg="black", state=tk.DISABLED)
+            gbutton.config(bg="black", state=tk.DISABLED)
+            bbutton.config(bg="black", state=tk.DISABLED)
+            ybutton.config(bg="black", state=tk.DISABLED)
             print("Oops! Wrong colour. Game over.")
             print(f"Game Over! You scored {points} points!")
             pointFileData = open("points.txt", "r")
@@ -196,3 +200,4 @@ ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
 
 newRound()
 root.mainloop()
+
