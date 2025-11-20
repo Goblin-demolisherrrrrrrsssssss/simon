@@ -2,6 +2,13 @@ import tkinter as tk
 import time
 import winsound
 import sys
+import re
+
+try:
+    testFileOpen = open("points.txt", "r")
+except FileExistsError:
+    FileCreator = open("points.txt", "x")
+
 userSequence=[]
 wrong = False
 import random 
@@ -9,7 +16,7 @@ sequence = []
 root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
 points = 0
-name = ""
+name = input("please enter your name here: ")
 sound_map = {
     "RED": 440,     # A4
     "GREEN": 523,   # C5
@@ -67,10 +74,19 @@ def buttonClick(colour):
             bbutton.config(bg="black", state=tk.DISABLED)
             ybutton.config(bg="black", state=tk.DISABLED)
             label.config(text="GAME OVER")
-            print("Oops! Wrong colour. Game over.")
-            print(f"Game Over! You scored {points} points!")
-            pointAdder = open("points.txt", "a")
-            pointAdder.write(f"{name}: {points}\n")
+            pointFileData = open("points.txt", "r")
+            fileData = pointFileData.read()
+            if name in fileData:
+                old_score = int(re.search(fr"{name}: (\d+)", fileData).group(1))
+                if points <= old_score: # doesn't replace the score if new one is lower
+                    pass
+                else:
+                    fileData = re.sub(fr"{name}: \d", f"{name}: {points}", fileData)
+            else:
+                fileData += f"{name}: {points}\n"
+            pointFileData.close()
+            pointAdder = open("points.txt", "w")
+            pointAdder.write(fileData)
             pointAdder.close()
             sys.exit(0)
             
