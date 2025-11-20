@@ -1,9 +1,14 @@
 import tkinter as tk
-import time
 import winsound
+import random 
+
+try:
+    testFileOpen = open("points.txt", "r")
+except FileExistsError:
+    FileCreator = open("points.txt", "x")
+
 userSequence=[]
 wrong = False
-import random 
 sequence = []
 root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
