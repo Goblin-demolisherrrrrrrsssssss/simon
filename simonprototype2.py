@@ -2,13 +2,6 @@ import tkinter as tk
 import time
 import winsound
 import sys
-import re
-
-try:
-    testFileOpen = open("points.txt", "r")
-except FileExistsError:
-    FileCreator = open("points.txt", "x")
-
 userSequence=[]
 wrong = False
 import random 
@@ -16,7 +9,7 @@ sequence = []
 root = tk.Tk()
 colours = ["GREEN","BLUE","RED","YELLOW"]
 points = 0
-name = input("please enter your name here: ")
+name = ""
 sound_map = {
     "RED": 440,     # A4
     "GREEN": 523,   # C5
@@ -62,7 +55,6 @@ def welcome():
     time.sleep(1)
     print("Your job is to press the buttons in the right sequence after they have flashed. Have fun!")
     time.sleep(5)
-
 def buttonClick(colour):
     global points
     userSequence.append(colour)
@@ -74,19 +66,10 @@ def buttonClick(colour):
             bbutton.config(bg="black", state=tk.DISABLED)
             ybutton.config(bg="black", state=tk.DISABLED)
             label.config(text="GAME OVER")
-            pointFileData = open("points.txt", "r")
-            fileData = pointFileData.read()
-            if name in fileData:
-                old_score = int(re.search(fr"{name}: (\d+)", fileData).group(1))
-                if points <= old_score: # doesn't replace the score if new one is lower
-                    pass
-                else:
-                    fileData = re.sub(fr"{name}: \d", f"{name}: {points}", fileData)
-            else:
-                fileData += f"{name}: {points}\n"
-            pointFileData.close()
-            pointAdder = open("points.txt", "w")
-            pointAdder.write(fileData)
+            print("Oops! Wrong colour. Game over.")
+            print(f"Game Over! You scored {points} points!")
+            pointAdder = open("points.txt", "a")
+            pointAdder.write(f"{name}: {points}\n")
             pointAdder.close()
             sys.exit(0)
             
@@ -96,8 +79,13 @@ def buttonClick(colour):
         label.config(text="Correct, on "+str(points)+" points")
         root.after(600,newRound)
         
-label = tk.Label(root, text="hello", font=("Arial", 14))
-
+label = tk.Label(root, text="Welcome to Simon", font=("Arial", 14))
+label2 = tk.Label(root, text="""In this game, buttons will flash in a sequence and each button that flashes
+will make a corresponding sound,with the same sound being played each time
+for a specific button
+Your job is to press the buttons in the right sequence after they have flashed.
+Have fun!
+""", font=("Arial", 14))
 rbutton = tk.Button(root,
                     text="",
                     command=lambda:buttonClick("RED"),
@@ -196,6 +184,8 @@ bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
 gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10)
 ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
 label.grid(row= 1, column=2, pady = 10, padx= 10)
+label2.grid(row= 2, column=2, pady = 10, padx= 10)
+
 
 
 
