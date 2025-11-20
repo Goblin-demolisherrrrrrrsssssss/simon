@@ -59,6 +59,7 @@ def buttonClick(colour):
             gbutton.config(bg="black", state=tk.DISABLED)
             bbutton.config(bg="black", state=tk.DISABLED)
             ybutton.config(bg="black", state=tk.DISABLED)
+            label.config(text="GAME OVER")
             print("Oops! Wrong colour. Game over.")
             print(f"Game Over! You scored {points} points!")
             pointAdder = open("points.txt", "a")
@@ -69,7 +70,10 @@ def buttonClick(colour):
     if userSequence == sequence:
         print("Correct!\n")
         points += 1
+        label.config(text="Correct, on "+str(points)+" points")
         root.after(600,newRound)
+        
+label = tk.Label(root, text="hello", font=("Arial", 14))
 
 rbutton = tk.Button(root,
                     text="",
@@ -168,6 +172,7 @@ rbutton.grid(row = 0, column = 0,  pady = 10, padx= 10)
 bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
 gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10)
 ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
+label.grid(row= 1, column=2, pady = 10, padx= 10)
 
 
 
