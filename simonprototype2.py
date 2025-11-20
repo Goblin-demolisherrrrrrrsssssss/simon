@@ -73,7 +73,7 @@ def buttonClick(colour):
             gbutton.config(bg="black", state=tk.DISABLED)
             bbutton.config(bg="black", state=tk.DISABLED)
             ybutton.config(bg="black", state=tk.DISABLED)
-            label.config(text="GAME OVER")
+            label.config(text=f"GAME OVER, you got {points} points!")
             pointFileData = open("points.txt", "r")
             fileData = pointFileData.read()
             if name in fileData:
@@ -88,6 +88,7 @@ def buttonClick(colour):
             pointAdder = open("points.txt", "w")
             pointAdder.write(fileData)
             pointAdder.close()
+            print(f"you got {points} points!")
             sys.exit(0)
             
     if userSequence == sequence:
