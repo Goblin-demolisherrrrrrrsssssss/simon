@@ -3,12 +3,6 @@ import time
 import winsound
 import sys
 import re
-
-try:
-    testFileOpen = open("points.txt", "r")
-except FileExistsError:
-    FileCreator = open("points.txt", "x")
-
 userSequence=[]
 wrong = False
 import random 
@@ -23,6 +17,11 @@ sound_map = {
     "BLUE": 349,    # F4
     "YELLOW": 392   # G4
 }
+try:
+    testFileOpen = open("points.txt", "r")
+except FileExistsError:
+    FileCreator = open("points.txt", "x")
+
 def newRound():
     userSequence.clear()
     sequence.append(random.choice(colours))
@@ -73,7 +72,7 @@ def buttonClick(colour):
             gbutton.config(bg="black", state=tk.DISABLED)
             bbutton.config(bg="black", state=tk.DISABLED)
             ybutton.config(bg="black", state=tk.DISABLED)
-            label.config(text="GAME OVER")
+            label.config(text=f"GAME OVER, you got {points} points!")
             pointFileData = open("points.txt", "r")
             fileData = pointFileData.read()
             if name in fileData:
@@ -88,7 +87,10 @@ def buttonClick(colour):
             pointAdder = open("points.txt", "w")
             pointAdder.write(fileData)
             pointAdder.close()
-            sys.exit(0)
+            print(f"you got {points} points!")
+            label2.config(text=f"close window and run again to restart")
+
+
             
     if userSequence == sequence:
         print("Correct!\n")
@@ -96,8 +98,13 @@ def buttonClick(colour):
         label.config(text="Correct, on "+str(points)+" points")
         root.after(600,newRound)
         
-label = tk.Label(root, text="hello", font=("Arial", 14))
-
+label = tk.Label(root, text="Welcome to Simon", font=("Arial", 14), fg="white", bg="black")
+label2 = tk.Label(root, text="""In this game, buttons will flash in a sequence and each button that flashes
+will make a corresponding sound,with the same sound being played each time
+for a specific button
+Your job is to press the buttons in the right sequence after they have flashed.
+Have fun!
+""", font=("Arial", 14), fg="white", bg="black")
 rbutton = tk.Button(root,
                     text="",
                     command=lambda:buttonClick("RED"),
@@ -196,6 +203,9 @@ bbutton.grid(row = 1, column = 0,  pady = 10, padx= 10)
 gbutton.grid(row = 0, column = 1,  pady = 10, padx= 10)
 ybutton.grid(row = 1, column = 1,  pady = 10, padx= 10)
 label.grid(row= 1, column=2, pady = 10, padx= 10)
+label2.grid(row= 2, column=2, pady = 10, padx= 10)
+root.configure(background='black')
+
 
 
 
