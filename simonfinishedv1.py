@@ -31,8 +31,8 @@ def newRound():
         colour = sequence[i]
         if colour == "RED":
             btn = rbutton
-            orig = "red"
-            new="orangered"
+            orig = "tomato1"
+            new="red1"
         elif colour == "BLUE":
             btn = bbutton
             orig = "blue"
@@ -43,8 +43,8 @@ def newRound():
             new="springgreen1"
         else:
             btn = ybutton
-            orig = "yellow"
-            new="gold1"
+            orig = "gold1"
+            new="yellow"
 
         btn.config(bg=new)
         root.update()
@@ -71,10 +71,12 @@ def welcome():
 
 def buttonClick(colour):
     global points
+
     userSequence.append(colour)
     print(f"Pressed: {colour}\n")
     for x in range(len(userSequence)):
-        if userSequence[x] != sequence[x]:
+
+        if len(userSequence)>len(sequence) or userSequence[x] != sequence[x]:
             rbutton.config(bg="black", state=tk.DISABLED)
             gbutton.config(bg="black", state=tk.DISABLED)
             bbutton.config(bg="black", state=tk.DISABLED)
@@ -82,7 +84,6 @@ def buttonClick(colour):
             label.config(text=f"GAME OVER, you got {points} points!")
             pointFileData = open("points.txt", "r")
             fileData = pointFileData.read()
-            print(fileData)
             if name in fileData:
                 old_score = int(re.search(fr"{name}: (\d+)", fileData).group(1))
                 if points <= old_score: # doesn't replace the score if new one is lower
@@ -121,7 +122,7 @@ rbutton = tk.Button(root,
                     activeforeground="black",
                     anchor="n",
                     bd=3,
-                    bg="red",
+                    bg="tomato1",
                     cursor="hand2",
                     disabledforeground="black",
                     fg="black",
@@ -191,7 +192,7 @@ ybutton = tk.Button(root,
                     activeforeground="black",
                     anchor="w",
                     bd=3,
-                    bg="yellow",
+                    bg="gold1",
                     cursor="hand2",
                     disabledforeground="black",
                     fg="black",
@@ -215,18 +216,6 @@ label.grid(row= 1, column=2, pady = 10, padx= 10)
 label2.grid(row= 2, column=2, pady = 10, padx= 10)
 root.configure(background='black')
 
-
-
-
-    #rbutton.place(rely=1.0, relx=1.0,  anchor="se")
-    #gbutton.place(rely=1.0, relx=0.0,  anchor="ne")
-    #bbutton.place(rely=0.0, relx=1.0,  anchor="sw")
-    #ybutton.place(rely=0.0, relx=0.0,  anchor="ne")
-
-    #rbutton.pack(padx=20, pady=20)
-    #gbutton.pack(padx=20, pady=20)
-    #bbutton.pack(padx=20, pady=20)
-    #ybutton.pack(padx=20, pady=20)
 
 welcome()
 newRound()
